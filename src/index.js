@@ -22,7 +22,7 @@ const server = http.createServer(app)
 
 const io = socketio(server)
 
-const port = process.env.PORT
+const port = process.env.PORT || 3000
 
 io.on('connection', (socket) => {
 
@@ -71,4 +71,4 @@ io.on('connection', (socket) => {
   })
 })
 
-server.listen(port, () => console.log(`Server has started, listening on port ${port} in ${process.env.MODE} mode`))
+server.listen(port, () => console.log(`Server has started, listening on port ${port}`))
